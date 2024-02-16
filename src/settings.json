@@ -1,0 +1,8 @@
+{
+  "/front": "C:\\dev\\front\\",
+  "/libs": "C:\\dev\\lib\\",
+  "/swapi": "http://swapi.dev/",
+  "options": {
+    "port": 5281
+  }
+}
