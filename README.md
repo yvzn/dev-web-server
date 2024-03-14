@@ -1,5 +1,7 @@
 # web-server.dev
 
+**👨🏽‍💻 work in progress !**
+
 A development web server with 2 core features:
 - serve static files from local folder (example: front end) – or multiple local folders
 - reverse proxy calls to local or remote URLs (example: REST API)
