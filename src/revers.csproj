@@ -7,6 +7,7 @@
 		<PublishSingleFile>true</PublishSingleFile>
 		<SelfContained>true</SelfContained>
 		<PublishTrimmed>true</PublishTrimmed>
+ 		<AssemblyName>web-server</AssemblyName>
 	</PropertyGroup>
 
 	<ItemGroup>
