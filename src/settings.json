@@ -1,8 +1,10 @@
 {
-  "/front": "C:\\dev\\front\\",
-  "/libs": "C:\\dev\\lib\\",
-  "/swapi": "http://swapi.dev/",
+  "routes": {
+    "/front": "C:\\dev\\front\\",
+    "/libs": "C:\\dev\\lib\\",
+    "/swapi": "http://swapi.dev/"
+  },
   "options": {
-    "port": 5281
+    "port": 8080
   }
 }

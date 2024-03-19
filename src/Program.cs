@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore;
 using Microsoft.Extensions.FileProviders;
 using Yarp.ReverseProxy.Configuration;
@@ -73,7 +72,7 @@ internal class Startup(IConfiguration configuration)
 
     private IEnumerable<(string, Uri)> GetReverseProxyMappings()
     {
-        foreach (var (key, value) in Configuration.AsEnumerable())
+        foreach (var (key, value) in Configuration.GetRoutes())
         {
             if (IsReverseProxyMapping(key, value))
             {
@@ -89,7 +88,7 @@ internal class Startup(IConfiguration configuration)
 
     private IEnumerable<(string, DirectoryInfo)> GetStaticFileMappings()
     {
-        foreach (var (key, value) in Configuration.AsEnumerable())
+        foreach (var (key, value) in Configuration.GetRoutes())
         {
             if (IsStaticFileMapping(key, value))
             {
@@ -150,4 +149,11 @@ internal static class IServiceCollectionExtensions
             .AddReverseProxy()
             .LoadFromMemory(routes, clusters);
     }
+}
+
+internal static class IConfigurationExtensions {
+    public static IEnumerable<(string, string?)> GetRoutes(this IConfiguration configuration)
+        => configuration.GetSection("routes").AsEnumerable()
+            .Where(conf => conf.Key.StartsWith("routes:"))
+            .Select(conf => (conf.Key["routes:".Length..], conf.Value));
 }
