@@ -1,38 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
-    <title>web-server.dev</title>
-    <style>
-        * {
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            height: 100vh;
-        }
-
-        body {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        body>*+* {
-            margin-top: 1rem;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simplify your development setup: open source local HTTP server to host HTML / JS / CSS files during development and forward API calls to local or remote APIs" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>web-server.dev - A dev web server and reverse proxy</title>
 </head>
 
-<body>
-    <h1>web-server.dev</h1>
-    <h2>A development web server + reverse proxy</h2>
-    <p>work in progress !</p>
-    <p><a href="https://github.com/yvzn/dev-web-server">Github</a></p>
+<body class="bg-gray-900 text-slate-200">
+    <!-- Header Section -->
+    <header
+        class="sticky top-0 z-40 bg-gray-800 border-blue-900 border-b-4 px-8 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">web<span class="">-</span>server<span class="text-blue-500">.</span>dev</h1>
+        <nav>
+            <a id="cta-small" href="https://github.com/yvzn/dev-web-server/releases/latest/" target="_blank"
+                class="invisible hidden sm:inline-block bg-slate-100 text-blue-900 font-semibold mr-2 py-2 px-4 rounded-xl hover:bg-yellow-500 transition duration-300 ease-in-out">Download
+                now</a>
+            <a href="https://github.com/yvzn/dev-web-server" target="_blank"
+                class="text-blue-400 hover:text-yellow-500 inline-block py-2">GitHub</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-blue-900 text-slate-50 py-16 md:py-32 lg:py-64 px-8">
+        <div class="lg:w-4/5 mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8">web-server<span class="text-blue-300">.</span>dev</h2>
+            <p class="text-lg md:text-xl mb-12">A development web server and reverse proxy</p>
+            <p class="mb-4"><a id="cta-large" href="https://github.com/yvzn/dev-web-server/releases/latest/"
+                    target="_blank"
+                    class="bg-slate-100 text-blue-900 font-semibold mr-4 py-4 px-8 rounded-2xl hover:bg-yellow-500 transition duration-300 ease-in-out">Download
+                    now</a>
+                <a href="#use-case-1"
+                    class="border font-semibold py-4 px-8 rounded-2xl hover:text-yellow-500 transition duration-300 ease-in-out">Use
+                    cases</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 px-8">
+        <div class="lg:w-4/5 mx-auto">
+            <h2 class="text-3xl text-slate-50 font-bold mb-8">Features<span class="text-blue-500" role="presentation">
+                    .</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-6 rounded-md bg-gray-800">
+                    <h3 class="text-xl font-semibold mb-4">Serve files from local folder(s)</h3>
+                    <p>A local HTTP server to host HTML / JS / CSS files during development &mdash;
+                        typically required for advanced browser features (service worker, clipboard, ...)
+                        Multiple source folders supported.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="p-6 rounded-md bg-gray-800">
+                    <h3 class="text-xl font-semibold mb-4">Reverse proxy API calls</h3>
+                    <p>A single frontal server to forward API calls to local or remote APIs &mdash;
+                        simplify the development setup, no CORS required</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="bg-gray-700 py-16 px-8">
+        <div class="lg:w-4/5 mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Simple</h2>
+            <ul class="list-inside list-disc marker:text-blue-500">
+                <li class="mb-4">Simple to configure</li>
+                <li class="mb-4">Easy to install</li>
+                <li class="mb-4">On the command line</li>
+                <li class="mb-4">Windows and Linux</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="py-16 px-8">
+        <div class="lg:w-4/5 mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Open source</h2>
+            <ul class="list-inside list-disc marker:text-blue-500">
+                <li class="mb-4">Free to download and use</li>
+                <li class="mb-4">Permissive license, including commercial usage</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="bg-gray-700 py-16 px-8" id="use-case-1">
+        <div class="lg:w-4/5 mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Use case 1<span class="text-blue-500" role="presentation"> .</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="py-6">
+                    <h3 class="text-xl font-semibold mb-4">Host static files during development</h3>
+                    <p>Some browser features may be disabled when opening the files from file system and need an HTTP
+                        server.</p>
+                    <p>Useful for projects where a dev server is not already created.</p>
+                </div>
+                <div class="p-6 rounded-md bg-gray-800">
+                    <pre>
+// settings.json
+{
+  "routes": {
+    "/": "~/my-website/"
+  }
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-8">
+        <div class="lg:w-4/5 mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Use case 2<span class="text-blue-500" role="presentation"> .</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="py-6">
+                    <h3 class="text-xl font-semibold mb-4">Serve front-end files from local folder and proxy API calls
+                        to a back-end system</h3>
+                    <p>Removes the need to configure CORS on the back-end, since the browser sees everything as a single
+                        web server.</p>
+                </div>
+                <div class="p-6 rounded-md bg-gray-800">
+                    <pre>
+// settings.json
+{
+  "routes": {
+    "/": "~/my-website/",
+    "/api" : "http://my-api.dev/"
+  }
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-700 py-16 px-8">
+        <div class="lg:w-4/5 mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Use case 3<span class="text-blue-500" role="presentation"> .</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="py-6">
+                    <h3 class="text-xl font-semibold mb-4">Serve files from multiple folders</h3>
+                    <p>For instance, a home page and a documentation site &mdash; or a landing page and an app.</p>
+                </div>
+                <div class="p-6 rounded-md bg-gray-800">
+                    <pre>
+// settings.json
+{
+  "routes": {
+    "/app": "~/my-app/",
+    "/docs": "~/my-docs/"
+  }
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-8">
+        <div class="lg:w-4/5 mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Use case 4<span class="text-blue-400" role="presentation"> .</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="py-6">
+                    <h3 class="text-xl font-semibold mb-4">Group multiple endpoints behind a single access point</h3>
+                    <p>For instance, a public API and a private API &mdash; or an API and a solution for Analytics.</p>
+                </div>
+                <div class="p-6 rounded-md bg-gray-800">
+                    <pre>
+// settings.json
+{
+  "routes": {
+    "/api": "http://my-api.dev/",
+    "/private": "http://localhost:3000/"
+  }
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-700 py-16 px-8">
+        <div class="text-center">&copy; 2024 &mdash; Yvan Razafindramanana</div>
+    </footer>
+
+    <script>
+        if ("IntersectionObserver" in window) {
+            toggleSmallCta()
+        }
+
+        function toggleSmallCta() {
+            var smallCta = document.getElementById('cta-small')
+            var largeCta = document.getElementById('cta-large')
+
+            var observer = new IntersectionObserver(function (entries) {
+                if (entries[0].isIntersecting) {
+                    smallCta.classList.add('invisible')
+                }
+                else {
+                    smallCta.classList.remove('invisible')
+                }
+            });
+
+            observer.observe(largeCta)
+        }
+    </script>
 </body>
 
 </html>
