@@ -10,7 +10,7 @@
     <title>web-server.dev - A dev web server and reverse proxy</title>
 </head>
 
-<body class="bg-gray-900 text-slate-200">
+<body class="bg-gray-900 text-slate-300">
     <!-- Header Section -->
     <header
         class="sticky top-0 z-40 bg-gray-800 border-blue-900 border-b-4 px-8 py-4 flex justify-between items-center">
@@ -29,12 +29,12 @@
         <div class="lg:w-4/5 mx-auto">
             <h2 class="text-4xl md:text-5xl font-bold mb-8">web-server<span class="text-blue-300">.</span>dev</h2>
             <p class="text-lg md:text-xl mb-12">A development web server and reverse proxy</p>
-            <p class="mb-4"><a id="cta-large" href="https://github.com/yvzn/dev-web-server/releases/latest/"
+            <p><a id="cta-large" href="https://github.com/yvzn/dev-web-server/releases/latest/"
                     target="_blank"
-                    class="bg-slate-100 text-blue-900 font-semibold mr-4 py-4 px-8 rounded-2xl hover:bg-yellow-500 transition duration-300 ease-in-out">Download
+                    class="whitespace-nowrap inline-block bg-slate-100 text-blue-900 font-semibold mr-4 mb-4 py-4 px-8 rounded-2xl hover:bg-yellow-500 transition duration-300 ease-in-out">Download
                     now</a>
                 <a href="#use-case-1"
-                    class="border font-semibold py-4 px-8 rounded-2xl hover:text-yellow-500 transition duration-300 ease-in-out">Use
+                    class="whitespace-nowrap inline-block border font-semibold py-4 px-8 rounded-2xl hover:text-yellow-500 transition duration-300 ease-in-out">Use
                     cases</a>
             </p>
         </div>
@@ -43,7 +43,7 @@
     <!-- Features Section -->
     <section class="py-16 px-8">
         <div class="lg:w-4/5 mx-auto">
-            <h2 class="text-3xl text-slate-50 font-bold mb-8">Features<span class="text-blue-500" role="presentation">
+            <h2 class="text-3xl text-slate-100 text-slate-50 font-bold mb-8">Features<span class="text-blue-500" role="presentation">
                     .</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Feature 1 -->
@@ -64,9 +64,9 @@
     </section>
 
     <!-- Advantages Section -->
-    <section class="bg-gray-700 py-16 px-8">
+    <section class="text-slate-200 bg-gray-700 py-16 px-8">
         <div class="lg:w-4/5 mx-auto">
-            <h2 class="text-3xl font-bold mb-8">Simple</h2>
+            <h2 class="text-3xl text-slate-100 font-bold mb-8">Simple</h2>
             <ul class="list-inside list-disc marker:text-blue-500">
                 <li class="mb-4">Simple to configure</li>
                 <li class="mb-4">Easy to install</li>
@@ -78,7 +78,7 @@
 
     <section class="py-16 px-8">
         <div class="lg:w-4/5 mx-auto">
-            <h2 class="text-3xl font-bold mb-8">Open source</h2>
+            <h2 class="text-3xl text-slate-100 font-bold mb-8">Open source</h2>
             <ul class="list-inside list-disc marker:text-blue-500">
                 <li class="mb-4">Free to download and use</li>
                 <li class="mb-4">Permissive license, including commercial usage</li>
@@ -87,9 +87,9 @@
     </section>
 
     <!-- Use Cases Section -->
-    <section class="bg-gray-700 py-16 px-8" id="use-case-1">
+    <section class="text-slate-200 bg-gray-700 py-16 px-8" id="use-case-1">
         <div class="lg:w-4/5 mx-auto">
-            <h2 class="text-3xl font-bold mb-8">Use case 1<span class="text-blue-500" role="presentation"> .</span></h2>
+            <h2 class="text-3xl text-slate-100 font-bold mb-8">Use case 1<span class="text-blue-500" role="presentation"> .</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="py-6">
                     <h3 class="text-xl font-semibold mb-4">Host static files during development</h3>
@@ -99,10 +99,10 @@
                 </div>
                 <div class="p-6 rounded-md bg-gray-800">
                     <pre>
-// settings.json
+<span class="text-stone-300">// settings.json</span>
 {
-  "routes": {
-    "/": "~/my-website/"
+  <span class="text-amber-500">"routes"</span>: {
+    <span class="text-amber-500">"/"</span>: <span class="text-lime-500">"~/my-website/"</span>
   }
 }
                     </pre>
@@ -113,7 +113,7 @@
 
     <section class="py-16 px-8">
         <div class="lg:w-4/5 mx-auto">
-            <h2 class="text-3xl font-bold mb-8">Use case 2<span class="text-blue-500" role="presentation"> .</span></h2>
+            <h2 class="text-3xl text-slate-100 font-bold mb-8">Use case 2<span class="text-blue-500" role="presentation"> .</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="py-6">
                     <h3 class="text-xl font-semibold mb-4">Serve front-end files from local folder and proxy API calls
@@ -123,11 +123,11 @@
                 </div>
                 <div class="p-6 rounded-md bg-gray-800">
                     <pre>
-// settings.json
+<span class="text-stone-300">// settings.json</span>
 {
-  "routes": {
-    "/": "~/my-website/",
-    "/api" : "http://my-api.dev/"
+  <span class="text-amber-500">"routes"</span>: {
+    <span class="text-amber-500">"/"</span>: <span class="text-lime-500">"~/my-website/",</span>
+    <span class="text-amber-500">"/api"</span>: <span class="text-lime-500">"http://my-api.dev/"</span>
   }
 }
                     </pre>
@@ -136,9 +136,9 @@
         </div>
     </section>
 
-    <section class="bg-gray-700 py-16 px-8">
+    <section class="text-slate-200 bg-gray-700 py-16 px-8">
         <div class="lg:w-4/5 mx-auto">
-            <h2 class="text-3xl font-bold mb-8">Use case 3<span class="text-blue-500" role="presentation"> .</span></h2>
+            <h2 class="text-3xl text-slate-100 font-bold mb-8">Use case 3<span class="text-blue-500" role="presentation"> .</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="py-6">
                     <h3 class="text-xl font-semibold mb-4">Serve files from multiple folders</h3>
@@ -146,11 +146,11 @@
                 </div>
                 <div class="p-6 rounded-md bg-gray-800">
                     <pre>
-// settings.json
+<span class="text-stone-300">// settings.json</span>
 {
-  "routes": {
-    "/app": "~/my-app/",
-    "/docs": "~/my-docs/"
+  <span class="text-amber-500">"routes"</span>: {
+    <span class="text-amber-500">"/app"</span>: <span class="text-lime-500">"~/my-app/",</span>
+    <span class="text-amber-500">"/docs"</span>: <span class="text-lime-500">"~/my-docs/"</span>
   }
 }
                     </pre>
@@ -161,7 +161,7 @@
 
     <section class="py-16 px-8">
         <div class="lg:w-4/5 mx-auto">
-            <h2 class="text-3xl font-bold mb-8">Use case 4<span class="text-blue-400" role="presentation"> .</span></h2>
+            <h2 class="text-3xl text-slate-100 font-bold mb-8">Use case 4<span class="text-blue-400" role="presentation"> .</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="py-6">
                     <h3 class="text-xl font-semibold mb-4">Group multiple endpoints behind a single access point</h3>
@@ -169,11 +169,11 @@
                 </div>
                 <div class="p-6 rounded-md bg-gray-800">
                     <pre>
-// settings.json
+<span class="text-stone-300">// settings.json</span>
 {
-  "routes": {
-    "/api": "http://my-api.dev/",
-    "/private": "http://localhost:3000/"
+  <span class="text-amber-500">"routes"</span>: {
+    <span class="text-amber-500">"/api"</span>: <span class="text-lime-500">"http://my-api.dev/",</span>
+    <span class="text-amber-500">"/private"</span>: <span class="text-lime-500">"http://localhost:3000/"</span>
   }
 }
                     </pre>
@@ -182,7 +182,7 @@
         </div>
     </section>
 
-    <footer class="bg-gray-700 py-16 px-8">
+    <footer class="text-slate-200 bg-gray-700 py-16 px-8">
         <div class="text-center">&copy; 2024 &mdash; Yvan Razafindramanana</div>
     </footer>
 
