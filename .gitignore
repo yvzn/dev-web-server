@@ -2,3 +2,4 @@ bin/
 obj/
 .mono/
 node_modules/
+dist/
